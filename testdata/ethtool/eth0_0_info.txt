@@ -1,0 +1,20 @@
+Settings for eth0_0:
+	Supported ports: [ ]
+	Supported link modes:   2500baseX/Full 
+	                        10000baseKR/Full 
+	                        1000baseX/Full 
+	Supported pause frame use: No
+	Supports auto-negotiation: No
+	Supported FEC modes: Not reported
+	Advertised link modes:  Not reported
+	Advertised pause frame use: No
+	Advertised auto-negotiation: No
+	Advertised FEC modes: Not reported
+	Speed: 10000Mb/s
+	Duplex: Full
+	Port: Twisted Pair
+	PHYAD: 0
+	Transceiver: internal
+	Auto-negotiation: off
+	MDI-X: Unknown
+	Link detected: yes

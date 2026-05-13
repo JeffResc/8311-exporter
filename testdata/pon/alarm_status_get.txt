@@ -1,0 +1,11 @@
+Long Form: alarm_status_get
+Short Form: asg
+
+Input Parameter
+- uint16_t pon_alarm_id
+
+Output Parameter
+- enum fapi_pon_errorcode errorcode
+- uint8_t alarm_status
+- uint16_t alarm_id
+

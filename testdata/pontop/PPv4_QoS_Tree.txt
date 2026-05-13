@@ -1,0 +1,41 @@
+Page: PPv4 QoS Tree
+|-- Port-2(0)-WSP
+|	|-- Sched-18(136)-WSP
+|	|	|-- Queue-20(208)-rlm-5
+|	|	|-- Queue-21(209, bw 8000/2000)-rlm-6
+|	|	|-- Queue-22(210, bw 8000/2000)-rlm-7
+|	|	|-- Queue-23(211, bw 8000/2000)-rlm-8
+|	|	|-- Queue-24(212, bw 8000/2000)-rlm-9
+|	|	|-- Queue-25(213, bw 8000/2000)-rlm-10
+|	|	|-- Queue-26(214, bw 8000/2000)-rlm-11
+|	|	'-- Queue-27(215, bw 8000/2000)-rlm-12
+|	|-- Queue-5(144)-rlm-1
+|-- Port-10(15)-WSP
+|	|-- Sched-35(168)-WSP
+|	|	|-- Queue-37(232)-rlm-13-ewsp
+|	|	|-- Queue-38(233)-rlm-14-ewsp
+|	|	|-- Queue-39(234)-rlm-15-ewsp
+|	|	|-- Queue-40(235)-rlm-16-ewsp
+|	|	|-- Queue-41(236)-rlm-17-ewsp
+|	|	|-- Queue-42(237)-rlm-18-ewsp
+|	|	|-- Queue-43(238)-rlm-19
+|	|	'-- Queue-44(239)-rlm-20
+|	|-- Queue-13(176)-rlm-3
+|-- Port-45(16)-WSP
+|	|-- Queue-48(240)-rlm-21
+|-- Port-6(23)-WSP
+|	|-- Queue-9(152)-rlm-2
+|-- Port-0(25)-WRR
+|	'-- Queue-1(128)-rlm-0
+|-- Port-14(26)-WSP
+|	|-- Queue-17(184)-rlm-4
+|-- Port-50(27)-WSP
+|	|-- Sched-49(256)-WSP
+|	|	|-- Queue-54(280)-rlm-22-ewsp
+|	|	|-- Queue-55(281)-rlm-23-ewsp
+|	|	|-- Queue-56(282)-rlm-24-ewsp
+|	|	|-- Queue-57(283)-rlm-25-ewsp
+|	|	|-- Queue-58(284)-rlm-26-ewsp
+|	|	|-- Queue-59(285)-rlm-27-ewsp
+|	|	|-- Queue-60(286)-rlm-28
+|	|	'-- Queue-61(287)-rlm-29

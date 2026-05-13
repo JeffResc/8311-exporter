@@ -1,0 +1,2 @@
+Page: Active alarms
+Alarm type       Alarm                     Description                   

@@ -1,0 +1,10 @@
+{
+  "cpu1_tempC": 66.84,
+  "cpu2_tempC": 65.54,
+  "module_voltage": 3.43,
+  "optic_tempC": 53.38,
+  "ploam_state": 51,
+  "rx_power_dBm": -18.48,
+  "tx_bias_mA": 13.25,
+  "tx_power_dBm": 5.28
+}

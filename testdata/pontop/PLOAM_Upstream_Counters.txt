@@ -1,0 +1,9 @@
+Page: PLOAM Upstream Counters
+OPTION                                              VALUE
+Serial number                                      : 4 messages
+Registration                                       : 2 messages
+Key report                                         : 34 messages
+Acknowledge                                        : 38 messages
+Sleep request                                      : 0 messages
+Tuning response                                    : 34 messages
+Power consumption report                           : 0 messages

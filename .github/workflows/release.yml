@@ -1,0 +1,95 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release-please:
+    name: Release Please
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.rp.outputs.release_created }}
+      tag_name: ${{ steps.rp.outputs.tag_name }}
+      version: ${{ steps.rp.outputs.version }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: rp
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  build-artifacts:
+    name: Build & upload release artifacts
+    runs-on: ubuntu-latest
+    needs: release-please
+    if: needs.release-please.outputs.release_created == 'true'
+    env:
+      VERSION: ${{ needs.release-please.outputs.version }}
+      TAG_NAME: ${{ needs.release-please.outputs.tag_name }}
+      BIN: bin/8311-exporter.mips
+      ARCH: mips_24kc_nomips16
+      SDK_IMAGE: openwrt/sdk:mips_24kc-23.05.5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Cross-compile MIPS binary
+        env:
+          GOOS: linux
+          GOARCH: mips
+          GOMIPS: softfloat
+        run: |
+          mkdir -p bin dist
+          go build -trimpath -ldflags="-s -w -X main.version=${VERSION}" -o "${BIN}" ./cmd/8311-exporter
+          file "${BIN}"
+          cp "${BIN}" "dist/8311-exporter-${VERSION}-mips_24kc_softfloat"
+
+      - name: Build IPK via OpenWrt SDK
+        run: |
+          mkdir -p dist
+          docker run --rm --platform linux/amd64 \
+            -v "${{ github.workspace }}/packaging/openwrt:/pkg:ro" \
+            -v "${{ github.workspace }}/${BIN}:/prebuilt/8311-exporter:ro" \
+            -v "${{ github.workspace }}/dist:/dist" \
+            -e VERSION="${VERSION}" \
+            -e PKG_ARCH="${ARCH}" \
+            "${SDK_IMAGE}" \
+            bash -c '
+              set -e
+              cd /builder
+              rm -rf package/8311-exporter
+              cp -a /pkg package/8311-exporter
+              chmod -R u+w package/8311-exporter
+              make defconfig
+              rm -rf build_dir/target-*/8311-exporter-* bin/packages/*/base/8311-exporter_*.ipk
+              make package/8311-exporter/clean V=s || true
+              make package/8311-exporter/compile V=s \
+                PKG_VERSION="${VERSION#v}" \
+                PREBUILT_BIN=/prebuilt/8311-exporter \
+                PKGARCH="$PKG_ARCH"
+              cp bin/packages/*/base/8311-exporter_*.ipk /dist/
+              ls -la /dist/
+            '
+
+      - name: Generate checksums
+        working-directory: dist
+        run: sha256sum * > SHA256SUMS
+
+      - name: Upload artifacts to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload "${TAG_NAME}" dist/* --clobber

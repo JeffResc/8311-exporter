@@ -1,0 +1,4 @@
+Page: Allocation Counters
+Alloc index          Alloc id             Allocations          Alloc idle frames    Upstream Bandwidth   Status              
+0                    15                   57784120             462269556            512000               3 LINKED            
+1                    1052                 83657525             744235747823         832373376            3 LINKED            

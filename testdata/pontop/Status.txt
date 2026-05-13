@@ -1,0 +1,37 @@
+Page: Status
+OPTION                                              VALUE
+PON IP HW version                                  : 7
+PON IP FW version                                  : 3.21.0.3.16-1674463172
+PON IP SW version                                  : 1.22.9
+PON IP pontop version                              : 1.7.2
+ 
+SW uptime                                          : t.b.d
+ 
+PON type active                                    : t.b.d
+ 
+PON capability                                     : 000731f9
+   GEM Ports                                       : 256
+     Allocations                                   : t.b.d xGPON mode currently not supported
+     LLIDs                                         : t.b.d xEPON mode currently not supported
+ 
+PON PLOAM Status                                   : O5.1, Associated state
+ 
+ 
+FEC upstream                                       : ON
+FEC downstream                                     : ON
+ 
+ONU Authentication Status                          : 0
+ 
+OC Structure contents
+---------------------
+PON ID                                             : 0x00000000
+TOL                                                : Not supported
+RE                                                 : No reach extender present
+ODN Class                                          : N1
+DS FEC                                             : Downstream FEC enabled
+P                                                  : TC mode is G.989.3
+Link Type                                          : Unspecified
+Administrative Label                               : 0x00000000
+DWLCH ID                                           : 0x0
+R                                                  : value not available
+C                                                  : value not available

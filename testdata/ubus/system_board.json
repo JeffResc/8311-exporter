@@ -1,0 +1,14 @@
+{
+	"kernel": "4.9.308+",
+	"hostname": "prx126-sfp-pon",
+	"system": "PRX300 rev 1.3",
+	"model": "PRX126-SFP-PON",
+	"board_name": "PRX126-SFP-PON",
+	"release": {
+		"distribution": "LEDE",
+		"version": "PTXG_CX_V0.03",
+		"revision": "v19.07.8_maxlinear",
+		"target": "intel_mips/prx300",
+		"description": "LEDE PTXG_CX_V0.03 r11364-ef56c85848"
+	}
+}

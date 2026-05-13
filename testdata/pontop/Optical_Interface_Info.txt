@@ -1,0 +1,44 @@
+Page: Optical Interface Info
+SFP+ information                                    Status
+Vendor name                                        : OEM             
+Vendor oui                                         : 
+Part number                                        : SFP+ONU-XGSPON  
+Revision                                           : A-01
+Serial number                                      : 202604090049    
+Date code                                          : 260411  
+Wavelength                                         : 1270 nm
+ 
+Options
+------------
+Power level declaration                            : Power Level 1
+Paging implemented indicator                       : No
+Retimer / CDR indicator                            : No
+Cooled Transceiver declaration                     : No
+Linear Receiver Output implemented                 : No
+Receiver decision threshold implemented            : No
+Tunable transmitter technology                     : No
+RATE_SELECT functionality implemented              : No
+TX_DISABLE implemented                             : No
+TX_FAULT implemented                               : No
+Inverted loss of signal implemented                : No
+Loss of signal implemented                         : No
+SD Polarity                                        : Normal
+ 
+DMI type
+-------------
+Digital monitoring implemented                     : Yes
+Calibration                                        : Internal
+Received power measurement type                    : Average
+Address change required                            : No
+ 
+Enhanced options
+---------------------
+Optional Alarm/Warnings flags implemented          : Yes
+Soft TX_DISABLE control and monitoring implemented : Yes
+Soft TX_FAULT monitoring implemented               : Yes
+Soft RX_LOS monitoring implemented                 : Yes
+Soft RATE_SELECT ctrl and monitoring implemented   : No
+Application select control implemented             : No
+Soft RATE_SELECT control implemented               : No
+ 
+Compliance                                         : SFF-8472 Rev 11.0

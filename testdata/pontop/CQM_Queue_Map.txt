@@ -1,0 +1,32 @@
+Page: CQM Queue Map
+   F2   F1  DEC  ENC MPE2 MPE1  EP3  EP2  EP1  EP0 CLS3 CLS2 CLS1 CLS0  qid   id mode=0
+    x    x    0    0    0    0    0    0    0    0    0    x    x    x  12 (0x0000)
+    0    0    0    1    0    0    0    0    0    0    x    x    x    x  2  (0x0400)
+    x    x    0    0    0    0    0    0    0    0    1    0    0    0  5  (0x0008)
+    x    x    0    0    0    0    0    0    0    0    1    1    0    0  9  (0x000c)
+    x    x    0    0    0    0    0    0    0    0    1    0    1    0  7  (0x000a)
+    x    x    0    0    0    0    0    0    0    0    1    1    1    0  11 (0x000e)
+    x    x    0    0    0    0    0    0    0    0    1    0    0    1  6  (0x0009)
+    x    x    0    0    0    0    0    0    0    0    1    1    0    1  10 (0x000d)
+    x    x    0    0    0    0    0    0    0    0    1    0    1    1  8  (0x000b)
+    x    x    0    0    0    0    0    0    0    0    1    1    1    1  12 (0x000f)
+   S7   S6   S5   S4 MPE2 MPE1  EP3  EP2  EP1  EP0   S3   S2   S1   S0  qid   id mode=1
+    0    0    0    0    x    x    0    0    1    0    0    1    0    0  22 (0x0024)
+    0    0    0    0    x    x    0    0    1    0    0    0    1    0  24 (0x0022)
+    0    0    0    0    x    x    0    0    1    0    0    0    1    1  23 (0x0023)
+    0    0    0    0    0    0    0    0    1    0    0    0    0    x  4  (0x0020)
+    0    0    0    0    1    0    0    0    1    0    0    0    0    x  1  (0x0220)
+  S11  S10   S9   S8 MPE2 MPE1  EP3  EP2  EP1  EP0 CLS3 CLS2 CLS1 CLS0  qid   id mode=2
+    0    0    x    x    x    x    0    1    0    0    0    x    x    x  3  (0x0040)
+    0    0    x    x    0    0    0    1    0    0    1    x    x    x  3  (0x0048)
+    0    0    x    x    1    0    0    1    0    0    1    x    x    x  1  (0x0248)
+    0    1    0    0    x    x    0    1    0    0    0    x    x    x  3  (0x1040)
+    0    1    0    0    0    0    0    1    0    0    1    x    x    x  3  (0x1048)
+    0    1    0    0    1    0    0    1    0    0    1    x    x    x  1  (0x1248)
+  S11  S10   S9   S8 MPE2 MPE1  EP3  EP2  EP1  EP0 CLS3 CLS2 CLS1 CLS0  qid   id mode=2
+    x    x    x    x    x    0    0    1    0    1    1    0    1    0  7  (0x005a)
+    0    0    0    0    1    1    0    1    0    1    x    x    x    x  21 (0x0350)
+    0    0    0    0    0    0    0    1    0    1    x    x    x    1  1  (0x0051)
+    0    0    0    0    0    0    0    1    0    1    x    x    0    0  1  (0x0050)
+    0    0    0    0    0    0    0    1    0    1    x    1    1    0  1  (0x0056)
+    0    0    0    0    0    0    0    1    0    1    0    0    1    0  1  (0x0052)

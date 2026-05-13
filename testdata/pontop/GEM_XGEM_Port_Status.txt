@@ -1,0 +1,7 @@
+Page: GEM/XGEM Port Status
+GEM Index  GEM ID     Alloc Id   Alloc Id st.  Data/OMCI     Max. Size       Encryption k.r. Direction      
+0          15         15         Valid         OMCI          1980            Uni. DS         DS + US        
+1          65534      n.a.       Invalid       Ethernet      4096            None            DS             
+2          1066       1052       Valid         Ethernet      2048            None            DS + US        
+3          1067       1052       Valid         Ethernet      2048            None            DS + US        
+4          1068       1052       Valid         Ethernet      2048            None            DS + US        

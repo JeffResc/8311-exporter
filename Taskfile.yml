@@ -1,0 +1,99 @@
+version: '3'
+
+vars:
+  VERSION: '{{.VERSION | default "dev"}}'
+  GOMIPS: softfloat
+  # The 8311 firmware's opkg labels its arch "mips_24kc_nomips16" (MaxLinear's
+  # build flag for no MIPS16 codegen). The OpenWrt SDK builds for stock
+  # "mips_24kc"; since Go never emits MIPS16, our static binary is
+  # ABI-identical and we just relabel the package via PKG_ARCH.
+  ARCH: '{{.ARCH | default "mips_24kc_nomips16"}}'
+  SDK_IMAGE: openwrt/sdk:mips_24kc-23.05.5
+  BIN: bin/8311-exporter.mips
+  HOST: '{{.HOST | default "root@192.168.98.1"}}'
+
+tasks:
+  default:
+    desc: "Run tests + cross-compile (the default sanity check)"
+    cmds:
+      - task: test
+      - task: build:mips
+
+  test:
+    desc: "Run all Go unit tests"
+    cmds:
+      - go test ./...
+
+  build:
+    desc: "Host build for local iteration"
+    cmds:
+      - mkdir -p bin
+      - go build -trimpath -ldflags='-s -w -X main.version={{.VERSION}}' -o bin/8311-exporter ./cmd/8311-exporter
+
+  build:mips:
+    desc: "Cross-compile the stick binary (linux/mips/softfloat, stripped)"
+    sources:
+      - cmd/**/*.go
+      - internal/**/*.go
+      - go.mod
+    generates:
+      - "{{.BIN}}"
+    cmds:
+      - mkdir -p bin
+      - GOOS=linux GOARCH=mips GOMIPS={{.GOMIPS}} go build -trimpath -ldflags='-s -w -X main.version={{.VERSION}}' -o {{.BIN}} ./cmd/8311-exporter
+      - file {{.BIN}}
+
+  ipk:
+    desc: "Build an IPK via the OpenWrt SDK (Docker)"
+    deps: [build:mips]
+    cmds:
+      - mkdir -p dist
+      # SDK image runs as user 'buildbot' with the SDK root at /builder.
+      # We mount our packaging dir and the pre-built binary read-only, then
+      # build via the standard SDK package flow. The resulting .ipk is
+      # copied to ./dist.
+      - |
+        docker run --rm --platform linux/amd64 \
+          -v "$(pwd)/packaging/openwrt:/pkg:ro" \
+          -v "$(pwd)/{{.BIN}}:/prebuilt/8311-exporter:ro" \
+          -v "$(pwd)/dist:/dist" \
+          -e VERSION={{.VERSION}} \
+          -e PKG_ARCH={{.ARCH}} \
+          {{.SDK_IMAGE}} \
+          bash -c '
+            set -e
+            cd /builder
+            rm -rf package/8311-exporter
+            cp -a /pkg package/8311-exporter
+            chmod -R u+w package/8311-exporter
+            make defconfig
+            rm -rf build_dir/target-*/8311-exporter-* bin/packages/*/base/8311-exporter_*.ipk
+            make package/8311-exporter/clean V=s || true
+            make package/8311-exporter/compile V=s \
+              PKG_VERSION="${VERSION#v}" \
+              PREBUILT_BIN=/prebuilt/8311-exporter \
+              PKGARCH="$PKG_ARCH"
+            cp bin/packages/*/base/8311-exporter_*.ipk /dist/
+            ls -la /dist/
+          '
+      - shasum -a 256 dist/8311-exporter_*.ipk
+
+  install:
+    desc: "scp + restart on the live stick (HOST=root@<ip>)"
+    deps: [build:mips]
+    cmds:
+      - ssh {{.HOST}} 'killall 8311-exporter 2>/dev/null; sleep 1; true'
+      - scp -O {{.BIN}} {{.HOST}}:/usr/sbin/8311-exporter
+      - ssh {{.HOST}} '/etc/init.d/8311-exporter restart 2>/dev/null || /usr/sbin/8311-exporter -listen :9833 >/tmp/8311-exporter.log 2>&1 &'
+
+  install:ipk:
+    desc: "Copy the IPK to the stick and run opkg install (HOST=root@<ip>)"
+    deps: [ipk]
+    cmds:
+      - scp -O dist/8311-exporter_*.ipk {{.HOST}}:/tmp/8311-exporter.ipk
+      - ssh {{.HOST}} 'opkg install /tmp/8311-exporter.ipk'
+
+  clean:
+    desc: "Remove build artifacts"
+    cmds:
+      - rm -rf bin dist

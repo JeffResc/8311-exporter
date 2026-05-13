@@ -1,0 +1,1 @@
+errorcode=0 current=51 previous=40 time_curr=57779 

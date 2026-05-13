@@ -1,0 +1,2 @@
+Settings for sw-multicast:
+	Link detected: yes

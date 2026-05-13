@@ -1,0 +1,10 @@
+Page: Optical Interface Status
+OPTION                                              VALUE
+Optical transceiver temperature                    : 53 deg C / 326 K
+Transceiver supply voltage                         : 3.43 V
+Transmit bias current                              : 12.86 mA
+Transmit power                                     : 5.14 dBm
+Receive power                                      : -18.45 dBm
+ 
+Receiver status                                    : OK
+Transmitter status                                 : ENABLED 

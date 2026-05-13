@@ -1,0 +1,16 @@
+# Build outputs
+bin/
+dist/
+
+# Taskfile cache (fingerprints used by `sources:` / `generates:`)
+.task/
+
+# Editor / OS noise
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Go cruft
+*.test
+*.out

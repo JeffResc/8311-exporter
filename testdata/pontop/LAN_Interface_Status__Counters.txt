@@ -1,0 +1,3 @@
+Page: LAN Interface Status & Counters
+OPTION                                             VALUE
+t.b.d missing data

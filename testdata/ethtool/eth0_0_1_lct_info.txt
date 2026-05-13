@@ -1,0 +1,2 @@
+Settings for eth0_0_1_lct:
+	Link detected: yes

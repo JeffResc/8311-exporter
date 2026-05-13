@@ -1,0 +1,20 @@
+Page: PSM Configuration
+OPTION                                              VALUE
+PSM                                                : disabled
+ 
+Maximum sleep interval                             : 0
+Minimum aware interval                             : 0
+Minimum active held interval                       : 0
+Maximum Rx off interval                            : 0
+ 
+State idle                                         : 4569
+State active                                       : 57731231
+State active held                                  : 0
+State active free                                  : 0
+State asleep                                       : 0
+State listen                                       : 0
+State watch                                        : 0
+State doze aware                                   : 0
+State watch aware                                  : 0
+State sleep aware                                  : 0
+State wait                                         : 0

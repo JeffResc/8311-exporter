@@ -1,0 +1,18 @@
+Page: Capability and Configuration
+OPTION                                              VALUE
+Serial number                                      : FTRO4A3252FE
+Registration ID                                    : 00000000-00000000-00000000-00000000-00000000-00000000-00000000-00000000-00000000
+ 
+Capability details
+------------------
+Basic mode(s)                                      : G.987|G.989|G.9807|
+OMCI support                                       : OMCI Annex E|F
+Power saving mode(s)                               : doze|cyclic sleep|watchful sleep|
+DBA mode(s)                                        : mode0|mode1
+Crypto mode(s)                                     : AES-CMAC-128|
+ 
+GEM Ports                                          : 256
+Allocations                                        : 64
+LLIDs                                              : t.b.d xEPON mode currently not supported
+ 
+Debug mode                                         : enabled

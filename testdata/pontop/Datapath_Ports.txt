@@ -1,0 +1,542 @@
+Page: Datapath Ports
+00:module=0x0(name:  kernel) dev_port=00 dp_port=00 itf_base=0(Enabled) ctp_max=4
+    status:            PORT_SUBIF_REGISTERED
+    allocate_flags:    CPU  dp_port: 0
+    Lookup mode:       0 [flowid[7:6] + dec + enc + class[3:0]]
+    gswip mode:        0 [8BIT_WLAN]
+    Port type:         0 (Linux)
+    LCT:               0
+    subif/ctp/gpid_max:4/4/0
+    p_swdev:	       0 (Disabled)
+    cb->rx_fn:         0x  (null)
+    cb->restart_fn:    0x  (null)
+    cb->stop_fn:       0x  (null)
+    cb->get_subifid_fn:0x  (null)
+    num_subif:         0
+    vap_offset/mask:   8/0xf
+    bp_hairpin_cap:    0
+    cbm_port_flags:    0x0 []
+    num_resv_queue:    0
+    resv_queue_base:   0
+    deq_port_base:     0
+    deq_port_num:      4
+    deq_ports:         0 65535 65535 65535 
+    num_dma_chan:      0
+    dma_chan:          0x0(dma-ctrl=0,port=0,channel=0)
+    dma_chan_tbl_idx:  0
+    gpid_base/spl:     0/0
+    PTP:               0 (Disabled)
+    loop_dis:          0
+    tx_policy_base/num:0/4
+    rx_policy_base/num:0/4
+    tx_pkt_credit:     0
+    tx_b_credit:       00
+    txpush_addr:       0x  (null)
+    txpush_addr_qos:   0x  (null)
+    tx_ring_size:      0
+    tx_ring_offset:    0(to next dequeue port)
+      [00]:subif=0x0000 netif=0x0(netif=NULL/DSL),device_name= dp_dev=
+           subif_flag:     0x00000000
+           data_flag_ops   0x00000000 ()
+           rx_fn_rxif_pkt  0x00000000
+           rx_fn_txif_pkt  0x00000000
+           rx_fn_dropped   0x00000000
+           tx_cbm_pkt      0x00000000
+           tx_tso_pkt      0x00000000
+           tx_pkt_dropped  0x00000000
+           tx_clone_pkt    0x00000000
+           tx_hdr_room_pkt 0x00000000
+           rx_fn           0x  (null)
+           get_subifid_fn  0x  (null)
+           swdev:	   0 (Disabled)
+           Domain_id:	   0 (member:0xffffffff)
+           subif_groupid:  0
+           bp=0(member:2 3 4 5 6 7 8 Fid=0(hw)/0(sif))
+           num_qid:        1
+           dqport_idx/num: 0/1
+             [00]:qid/node:    1/5
+                  port/node:   0/0(ref=1)
+           mac_learn_dis:  1 (Disabled)
+           gpid:           0
+           cpu_port_en:    0 (Disabled)
+           ctp_base:       0
+           ctp:            0
+           ctp_dev:        NULL
+           rx_en_flag:     0
+           tx_policy base/num/map:      0/0/0
+           rx_policy base/num/map:      0/0/0
+    rx_err_drop=0x00000000  tx_err_drop=0x00000000
+    insertion_qid:       2
+    insertion_deqport:   23
+    insertion_tx_dma_ch: 0x1000010(dma-ctrl=1,port=0,channel=16)
+01: rx_err_drop=0x00000000  tx_err_drop=0x00000000
+02:module=0xc0a1de60(name:mod_pon_eth) dev_port=02 dp_port=02 itf_base=11(Enabled) ctp_max=256
+    status:            PORT_SUBIF_REGISTERED
+    allocate_flags:    GPON  dp_port: 2
+    Lookup mode:       1 [subif_id[7:0]]
+    gswip mode:        2 [PORT_GPON]
+    Port type:         0 (Linux)
+    LCT:               0
+    subif/ctp/gpid_max:256/256/0
+    p_swdev:	       1 (Enabled)
+    cb->rx_fn:         0xc0a12528
+    cb->restart_fn:    0x  (null)
+    cb->stop_fn:       0x  (null)
+    cb->get_subifid_fn:0x  (null)
+    num_subif:         5
+    vap_offset/mask:   0/0xff
+    bp_hairpin_cap:    0
+    cbm_port_flags:    0xef [CBM_PORT_DP_SET | CBM_PORT_DQ_SET | CBM_PORT_DMA_CHAN_SET | CBM_PORT_PKT_CRDT_SET | CBM_PORT_RING_ADDR_SET | CBM_PORT_RING_SIZE_SET | CBM_PORT_RING_OFFSET_SET | ]
+    num_resv_queue:    0
+    resv_queue_base:   0
+    deq_port_base:     26
+    deq_port_num:      64
+    deq_ports:         26 27 28 29 30 31 32 33 
+    num_dma_chan:      1
+    dma_chan:          0x2000000(dma-ctrl=2,port=0,channel=0)
+    dma_chan_tbl_idx:  37
+    gpid_base/spl:     0/0
+    PTP:               0 (Disabled)
+    loop_dis:          1
+    tx_policy_base/num:0/4
+    rx_policy_base/num:0/0
+    tx_pkt_credit:     8
+    tx_b_credit:       00
+    txpush_addr:       0xb8a41a00
+    txpush_addr_qos:   0x00241a00
+    tx_ring_size:      1
+    tx_ring_offset:    256(to next dequeue port)
+      [00]:subif=0x0000 netif=0x7bd77800(netif=gem-omci),device_name=gem-omci dp_dev=gem-omci
+           subif_flag:     0x00000000
+           data_flag_ops   0x00004021 (DP_SUBIF_AUTO_NEW_Q | DP_SUBIF_RX_FLAG | DP_SUBIF_BR_DOMAIN | )
+           rx_fn_rxif_pkt  0x000001a3
+           rx_fn_txif_pkt  0x00000000
+           rx_fn_dropped   0x00000000
+           tx_cbm_pkt      0x00000000
+           tx_tso_pkt      0x00000000
+           tx_pkt_dropped  0x00000000
+           tx_clone_pkt    0x00000000
+           tx_hdr_room_pkt 0x00000000
+           rx_fn           0xc0a12528
+           get_subifid_fn  0x  (null)
+           swdev:	   1 (Enabled)
+           Domain_id:	   1 (member:0x00000043)
+           subif_groupid:  0
+           bp=8(member:0 Fid=0(hw)/0(sif))
+           num_qid:        1
+           dqport_idx/num: 0/1
+             [00]:qid/node:    4/17
+                  port/node:   26/0(ref=2)
+                  tx_dma_ch:   0x2000000(ref=5,dma-ctrl=2,port=0,channel=0)
+           mac_learn_dis:  1 (Disabled)
+           gpid:           0
+           cpu_port_en:    1 (Enabled)
+           ctp_base:       11
+           ctp:            11
+           ctp_dev:        NULL
+           rx_en_flag:     1
+           tx_policy base/num/map:      0/4/0
+           rx_policy base/num/map:      0/0/0
+      [01]:subif=0x0001 netif=0x7c3e2800(netif=gem65534),device_name=gem65534 dp_dev=gem65534
+           subif_flag:     0x00000000
+           data_flag_ops   0x00004420 (DP_SUBIF_RX_FLAG | DP_SUBIF_BR_DOMAIN | )
+           rx_fn_rxif_pkt  0x00000000
+           rx_fn_txif_pkt  0x00000000
+           rx_fn_dropped   0x00000000
+           tx_cbm_pkt      0x00000000
+           tx_tso_pkt      0x00000000
+           tx_pkt_dropped  0x00000000
+           tx_clone_pkt    0x00000000
+           tx_hdr_room_pkt 0x00000000
+           rx_fn           0xc0a12528
+           get_subifid_fn  0x  (null)
+           swdev:	   1 (Enabled)
+           Domain_id:	   2 (member:0x00000004)
+           subif_groupid:  1
+           bp=10(member:Fid=0(hw)/0(sif))
+           num_qid:        1
+           dqport_idx/num: 0/1
+             [00]:qid/node:    4/17
+                  port/node:   26/0(ref=2)
+                  tx_dma_ch:   0x2000000(ref=5,dma-ctrl=2,port=0,channel=0)
+           mac_learn_dis:  1 (Disabled)
+           gpid:           0
+           cpu_port_en:    0 (Disabled)
+           ctp_base:       11
+           ctp:            12
+           ctp_dev:        NULL
+           rx_en_flag:     0
+           tx_policy base/num/map:      0/4/0
+           rx_policy base/num/map:      0/0/0
+      [02]:subif=0x0002 netif=0x7bd15000(netif=pmapper41218),device_name=pmapper41218 dp_dev=pmapper41218
+           subif_flag:     0x00000000
+           data_flag_ops   0x00004422 (DP_SUBIF_SPECIFIC_Q | DP_SUBIF_RX_FLAG | DP_SUBIF_BR_DOMAIN | )
+           rx_fn_rxif_pkt  0x00000000
+           rx_fn_txif_pkt  0x00000000
+           rx_fn_dropped   0x00000000
+           tx_cbm_pkt      0x00000000
+           tx_tso_pkt      0x00000000
+           tx_pkt_dropped  0x00000000
+           tx_clone_pkt    0x00000000
+           tx_hdr_room_pkt 0x00000000
+           rx_fn           0xc0a12528
+           get_subifid_fn  0x  (null)
+           swdev:	   1 (Enabled)
+           Domain_id:	   1 (member:0x00000043)
+           subif_groupid:  2
+           bp=14(member:3 Fid=1(hw)/1(sif))
+           num_qid:        1
+           dqport_idx/num: 1/1
+             [00]:qid/node:    22/0
+                  port/node:   27/-1(ref=3)
+                  tx_dma_ch:   0x2000000(ref=5,dma-ctrl=2,port=0,channel=0)
+           mac_learn_dis:  1 (Disabled)
+           gpid:           0
+           cpu_port_en:    0 (Disabled)
+           ctp_base:       11
+           ctp:            13
+           ctp_dev:        gem1066
+           rx_en_flag:     1
+           tx_policy base/num/map:      0/4/0
+           rx_policy base/num/map:      0/0/0
+      [03]:subif=0x0003 netif=0x7bd15000(netif=pmapper41218),device_name=pmapper41218 dp_dev=pmapper41218
+           subif_flag:     0x00000000
+           data_flag_ops   0x00004422 (DP_SUBIF_SPECIFIC_Q | DP_SUBIF_RX_FLAG | DP_SUBIF_BR_DOMAIN | )
+           rx_fn_rxif_pkt  0x00000000
+           rx_fn_txif_pkt  0x00000000
+           rx_fn_dropped   0x00000000
+           tx_cbm_pkt      0x00000000
+           tx_tso_pkt      0x00000000
+           tx_pkt_dropped  0x00000000
+           tx_clone_pkt    0x00000000
+           tx_hdr_room_pkt 0x00000000
+           rx_fn           0xc0a12528
+           get_subifid_fn  0x  (null)
+           swdev:	   1 (Enabled)
+           Domain_id:	   1 (member:0x00000043)
+           subif_groupid:  3
+           bp=14(member:3 Fid=1(hw)/1(sif))
+           num_qid:        1
+           dqport_idx/num: 1/1
+             [00]:qid/node:    22/0
+                  port/node:   27/-1(ref=3)
+                  tx_dma_ch:   0x2000000(ref=5,dma-ctrl=2,port=0,channel=0)
+           mac_learn_dis:  1 (Disabled)
+           gpid:           0
+           cpu_port_en:    0 (Disabled)
+           ctp_base:       11
+           ctp:            14
+           ctp_dev:        gem1067
+           rx_en_flag:     1
+           tx_policy base/num/map:      0/4/0
+           rx_policy base/num/map:      0/0/0
+      [04]:subif=0x0004 netif=0x7bd15000(netif=pmapper41218),device_name=pmapper41218 dp_dev=pmapper41218
+           subif_flag:     0x00000000
+           data_flag_ops   0x00004422 (DP_SUBIF_SPECIFIC_Q | DP_SUBIF_RX_FLAG | DP_SUBIF_BR_DOMAIN | )
+           rx_fn_rxif_pkt  0x00000000
+           rx_fn_txif_pkt  0x00000000
+           rx_fn_dropped   0x00000000
+           tx_cbm_pkt      0x00000000
+           tx_tso_pkt      0x00000000
+           tx_pkt_dropped  0x00000000
+           tx_clone_pkt    0x00000000
+           tx_hdr_room_pkt 0x00000000
+           rx_fn           0xc0a12528
+           get_subifid_fn  0x  (null)
+           swdev:	   1 (Enabled)
+           Domain_id:	   1 (member:0x00000043)
+           subif_groupid:  4
+           bp=14(member:3 Fid=1(hw)/1(sif))
+           num_qid:        1
+           dqport_idx/num: 1/1
+             [00]:qid/node:    22/0
+                  port/node:   27/-1(ref=3)
+                  tx_dma_ch:   0x2000000(ref=5,dma-ctrl=2,port=0,channel=0)
+           mac_learn_dis:  1 (Disabled)
+           gpid:           0
+           cpu_port_en:    0 (Disabled)
+           ctp_base:       11
+           ctp:            15
+           ctp_dev:        gem1068
+           rx_en_flag:     1
+           tx_policy base/num/map:      0/4/0
+           rx_policy base/num/map:      0/0/0
+    rx_err_drop=0x00000000  tx_err_drop=0x00000000
+03: rx_err_drop=0x00000000  tx_err_drop=0x00000000
+04:module=0xc09f79c0(name:module00) dev_port=04 dp_port=04 itf_base=2(Enabled) ctp_max=5
+    status:            PORT_SUBIF_REGISTERED
+    allocate_flags:    ETH_LAN  dp_port: 4
+    Lookup mode:       2 [subif_id[11:8] + class[3:0]]
+    gswip mode:        0 [8BIT_WLAN]
+    Port type:         0 (Linux)
+    LCT:               1
+    subif/ctp/gpid_max:5/5/0
+    p_swdev:	       1 (Enabled)
+    cb->rx_fn:         0xc09f225c
+    cb->restart_fn:    0xc09f3ad8
+    cb->stop_fn:       0xc09f006c
+    cb->get_subifid_fn:0x  (null)
+    num_subif:         5
+    vap_offset/mask:   8/0xf
+    bp_hairpin_cap:    0
+    cbm_port_flags:    0xef [CBM_PORT_DP_SET | CBM_PORT_DQ_SET | CBM_PORT_DMA_CHAN_SET | CBM_PORT_PKT_CRDT_SET | CBM_PORT_RING_ADDR_SET | CBM_PORT_RING_SIZE_SET | CBM_PORT_RING_OFFSET_SET | ]
+    num_resv_queue:    0
+    resv_queue_base:   0
+    deq_port_base:     15
+    deq_port_num:      1
+    deq_ports:         15 
+    num_dma_chan:      1
+    dma_chan:          0x1000008(dma-ctrl=1,port=0,channel=8)
+    dma_chan_tbl_idx:  27
+    gpid_base/spl:     0/0
+    PTP:               0 (Disabled)
+    loop_dis:          1
+    tx_policy_base/num:0/4
+    rx_policy_base/num:0/0
+    tx_pkt_credit:     8
+    tx_b_credit:       00
+    txpush_addr:       0xb8a40f00
+    txpush_addr_qos:   0x00240f00
+    tx_ring_size:      1
+    tx_ring_offset:    256(to next dequeue port)
+      [00]:subif=0x0000 netif=0x7d265000(netif=eth0_0),device_name=eth0_0 dp_dev=eth0_0
+           subif_flag:     0x00000000
+           data_flag_ops   0x00004021 (DP_SUBIF_AUTO_NEW_Q | DP_SUBIF_RX_FLAG | DP_SUBIF_BR_DOMAIN | )
+           rx_fn_rxif_pkt  0x00000006
+           rx_fn_txif_pkt  0x00000000
+           rx_fn_dropped   0x00000030
+           tx_cbm_pkt      0x00000000
+           tx_tso_pkt      0x00000000
+           tx_pkt_dropped  0x00000000
+           tx_clone_pkt    0x00000000
+           tx_hdr_room_pkt 0x00000000
+           rx_fn           0xc09f225c
+           get_subifid_fn  0x  (null)
+           swdev:	   1 (Enabled)
+           Domain_id:	   0 (member:0x00000013)
+           subif_groupid:  0
+           bp=3(member:14 Fid=1(hw)/1(sif))
+           num_qid:        1
+           dqport_idx/num: 0/1
+             [00]:qid/node:    3/13
+                  port/node:   15/0(ref=5)
+                  tx_dma_ch:   0x1000008(ref=5,dma-ctrl=1,port=0,channel=8)
+           mac_learn_dis:  0 (Enabled)
+           gpid:           0
+           cpu_port_en:    0 (Disabled)
+           ctp_base:       2
+           ctp:            2
+           ctp_dev:        NULL
+           rx_en_flag:     1
+           tx_policy base/num/map:      0/4/0
+           rx_policy base/num/map:      0/0/0
+      [01]:subif=0x0100 netif=0x7d263000(netif=eth0_0_1_lct),device_name=eth0_0_1_lct dp_dev=eth0_0_1_lct
+           subif_flag:     0x00000000
+           data_flag_ops   0x00004024 (DP_SUBIF_LCT | DP_SUBIF_RX_FLAG | DP_SUBIF_BR_DOMAIN | )
+           rx_fn_rxif_pkt  0x00007c21
+           rx_fn_txif_pkt  0x00000000
+           rx_fn_dropped   0x00000000
+           tx_cbm_pkt      0x00000000
+           tx_tso_pkt      0x00000000
+           tx_pkt_dropped  0x00000000
+           tx_clone_pkt    0x00000000
+           tx_hdr_room_pkt 0x00000000
+           rx_fn           0xc09f225c
+           get_subifid_fn  0x  (null)
+           swdev:	   1 (Enabled)
+           Domain_id:	   0 (member:0x00000013)
+           subif_groupid:  1
+           bp=4(member:Fid=0(hw)/0(sif))
+           num_qid:        1
+           dqport_idx/num: 0/1
+             [00]:qid/node:    3/13
+                  port/node:   15/0(ref=5)
+                  tx_dma_ch:   0x1000008(ref=5,dma-ctrl=1,port=0,channel=8)
+           mac_learn_dis:  0 (Enabled)
+           gpid:           0
+           cpu_port_en:    1 (Enabled)
+           ctp_base:       2
+           ctp:            3
+           ctp_dev:        NULL
+           rx_en_flag:     1
+           tx_policy base/num/map:      0/4/0
+           rx_policy base/num/map:      0/0/0
+      [02]:subif=0x0200 netif=0x7d267000(netif=eth0_0_2),device_name=eth0_0_2 dp_dev=eth0_0_2
+           subif_flag:     0x00000000
+           data_flag_ops   0x00004020 (DP_SUBIF_RX_FLAG | DP_SUBIF_BR_DOMAIN | )
+           rx_fn_rxif_pkt  0x00000000
+           rx_fn_txif_pkt  0x00000000
+           rx_fn_dropped   0x00000000
+           tx_cbm_pkt      0x00000000
+           tx_tso_pkt      0x00000000
+           tx_pkt_dropped  0x00000000
+           tx_clone_pkt    0x00000000
+           tx_hdr_room_pkt 0x00000000
+           rx_fn           0xc09f225c
+           get_subifid_fn  0x  (null)
+           swdev:	   1 (Enabled)
+           Domain_id:	   2 (member:0x00000000)
+           subif_groupid:  2
+           bp=5(member:0 Fid=0(hw)/0(sif))
+           num_qid:        1
+           dqport_idx/num: 0/1
+             [00]:qid/node:    3/13
+                  port/node:   15/0(ref=5)
+                  tx_dma_ch:   0x1000008(ref=5,dma-ctrl=1,port=0,channel=8)
+           mac_learn_dis:  0 (Enabled)
+           gpid:           0
+           cpu_port_en:    1 (Enabled)
+           ctp_base:       2
+           ctp:            4
+           ctp_dev:        NULL
+           rx_en_flag:     0
+           tx_policy base/num/map:      0/4/0
+           rx_policy base/num/map:      0/0/0
+      [03]:subif=0x0300 netif=0x7c395000(netif=eth0_0_3),device_name=eth0_0_3 dp_dev=eth0_0_3
+           subif_flag:     0x00000000
+           data_flag_ops   0x00004020 (DP_SUBIF_RX_FLAG | DP_SUBIF_BR_DOMAIN | )
+           rx_fn_rxif_pkt  0x00000000
+           rx_fn_txif_pkt  0x00000000
+           rx_fn_dropped   0x00000000
+           tx_cbm_pkt      0x00000000
+           tx_tso_pkt      0x00000000
+           tx_pkt_dropped  0x00000000
+           tx_clone_pkt    0x00000000
+           tx_hdr_room_pkt 0x00000000
+           rx_fn           0xc09f225c
+           get_subifid_fn  0x  (null)
+           swdev:	   1 (Enabled)
+           Domain_id:	   3 (member:0x00000000)
+           subif_groupid:  3
+           bp=6(member:0 Fid=0(hw)/0(sif))
+           num_qid:        1
+           dqport_idx/num: 0/1
+             [00]:qid/node:    3/13
+                  port/node:   15/0(ref=5)
+                  tx_dma_ch:   0x1000008(ref=5,dma-ctrl=1,port=0,channel=8)
+           mac_learn_dis:  0 (Enabled)
+           gpid:           0
+           cpu_port_en:    1 (Enabled)
+           ctp_base:       2
+           ctp:            5
+           ctp_dev:        NULL
+           rx_en_flag:     0
+           tx_policy base/num/map:      0/4/0
+           rx_policy base/num/map:      0/0/0
+      [04]:subif=0x0400 netif=0x7c393000(netif=eth0_0_us),device_name=eth0_0_us dp_dev=eth0_0_us
+           subif_flag:     0x00000000
+           data_flag_ops   0x00004020 (DP_SUBIF_RX_FLAG | DP_SUBIF_BR_DOMAIN | )
+           rx_fn_rxif_pkt  0x00000000
+           rx_fn_txif_pkt  0x00000000
+           rx_fn_dropped   0x00000000
+           tx_cbm_pkt      0x00000000
+           tx_tso_pkt      0x00000000
+           tx_pkt_dropped  0x00000000
+           tx_clone_pkt    0x00000000
+           tx_hdr_room_pkt 0x00000000
+           rx_fn           0xc09f225c
+           get_subifid_fn  0x  (null)
+           swdev:	   1 (Enabled)
+           Domain_id:	   5 (member:0x00000003)
+           subif_groupid:  4
+           bp=7(member:Fid=0(hw)/0(sif))
+           num_qid:        1
+           dqport_idx/num: 0/1
+             [00]:qid/node:    3/13
+                  port/node:   15/0(ref=5)
+                  tx_dma_ch:   0x1000008(ref=5,dma-ctrl=1,port=0,channel=8)
+           mac_learn_dis:  0 (Enabled)
+           gpid:           0
+           cpu_port_en:    0 (Disabled)
+           ctp_base:       2
+           ctp:            6
+           ctp_dev:        NULL
+           rx_en_flag:     0
+           tx_policy base/num/map:      0/4/0
+           rx_policy base/num/map:      0/0/0
+    rx_err_drop=0x00000000  tx_err_drop=0x00000000
+05:module=0xc0a1de60(name:mod_pon_eth) dev_port=00 dp_port=05 itf_base=7(Enabled) ctp_max=4
+    status:            PORT_SUBIF_REGISTERED
+    allocate_flags:    DirectPath  dp_port: 5
+    Lookup mode:       2 [subif_id[11:8] + class[3:0]]
+    gswip mode:        0 [8BIT_WLAN]
+    Port type:         0 (Linux)
+    LCT:               0
+    subif/ctp/gpid_max:4/4/0
+    p_swdev:	       1 (Enabled)
+    cb->rx_fn:         0xc0a185ec
+    cb->restart_fn:    0x  (null)
+    cb->stop_fn:       0x  (null)
+    cb->get_subifid_fn:0x  (null)
+    num_subif:         1
+    vap_offset/mask:   8/0xf
+    bp_hairpin_cap:    0
+    cbm_port_flags:    0xef [CBM_PORT_DP_SET | CBM_PORT_DQ_SET | CBM_PORT_DMA_CHAN_SET | CBM_PORT_PKT_CRDT_SET | CBM_PORT_RING_ADDR_SET | CBM_PORT_RING_SIZE_SET | CBM_PORT_RING_OFFSET_SET | ]
+    num_resv_queue:    0
+    resv_queue_base:   0
+    deq_port_base:     16
+    deq_port_num:      1
+    deq_ports:         16 
+    num_dma_chan:      1
+    dma_chan:          0x1000009(dma-ctrl=1,port=0,channel=9)
+    dma_chan_tbl_idx:  28
+    gpid_base/spl:     0/0
+    PTP:               0 (Disabled)
+    loop_dis:          0
+    tx_policy_base/num:0/4
+    rx_policy_base/num:0/0
+    tx_pkt_credit:     8
+    tx_b_credit:       00
+    txpush_addr:       0xb8a41000
+    txpush_addr_qos:   0x00241000
+    tx_ring_size:      1
+    tx_ring_offset:    256(to next dequeue port)
+      [00]:subif=0x0000 netif=0x7bd6d800(netif=iphost1_bp),device_name=iphost1_bp dp_dev=iphost1_bp
+           subif_flag:     0x00000000
+           data_flag_ops   0x00006401 (DP_SUBIF_AUTO_NEW_Q | DP_SUBIF_BR_DOMAIN | DP_SUBIF_NON_CPU_MAC | )
+           rx_fn_rxif_pkt  0x00000000
+           rx_fn_txif_pkt  0x00000000
+           rx_fn_dropped   0x00000000
+           tx_cbm_pkt      0x00000000
+           tx_tso_pkt      0x00000000
+           tx_pkt_dropped  0x00000000
+           tx_clone_pkt    0x00000000
+           tx_hdr_room_pkt 0x00000000
+           rx_fn           0xc0a185ec
+           get_subifid_fn  0x  (null)
+           swdev:	   1 (Enabled)
+           Domain_id:	   6 (member:0x00000042)
+           subif_groupid:  0
+           bp=9(member:Fid=0(hw)/0(sif))
+           num_qid:        1
+           dqport_idx/num: 0/1
+             [00]:qid/node:    21/48
+                  port/node:   16/0(ref=1)
+                  tx_dma_ch:   0x1000009(ref=1,dma-ctrl=1,port=0,channel=9)
+           mac_learn_dis:  1 (Disabled)
+           gpid:           0
+           cpu_port_en:    0 (Disabled)
+           ctp_base:       7
+           ctp:            7
+           ctp_dev:        NULL
+           rx_en_flag:     1
+           tx_policy base/num/map:      0/4/0
+           rx_policy base/num/map:      0/0/0
+    rx_err_drop=0x00000000  tx_err_drop=0x00000000
+06: rx_err_drop=0x00000000  tx_err_drop=0x00000000
+07: rx_err_drop=0x00000000  tx_err_drop=0x00000000
+08: rx_err_drop=0x00000000  tx_err_drop=0x00000000
+09: rx_err_drop=0x00000000  tx_err_drop=0x00000000
+10: rx_err_drop=0x00000000  tx_err_drop=0x00000000
+11: rx_err_drop=0x00000000  tx_err_drop=0x00000000
+q_map info:
+  dflt_cpu_vap     =0
+  reinsert_deq_port=23
+  dflt_q_cpu       =1
+  dflt_q_toe       =-1
+  dflt_q_re_insert =2
+  dflt_q_drop      =0
+  sif_reset_f      =0x4df
+  dflt_bp          =2
+version info: 1.0.0.124
+switchdev: v2

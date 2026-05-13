@@ -1,0 +1,8 @@
+Page: GTC/XGTC Status & Counters
+OPTION                                              VALUE
+PSBd HEC errors corrected                          : 0
+PSBd HEC errors uncorrected                        : 0
+FS HEC errors corrected                            : 0
+FS HEC errors uncorrected                          : 0
+Lost words due to HEC errors                       : 0
+PLOAM MIC errors                                   : 0

@@ -1,0 +1,140 @@
+Page: Datapath QOS
+Note:
+  x/y :physical node/logical node
+      :cqm dequeue port/ppv4 logical node
+  Blk :blocked, ie new incoming packet will be dropped
+  Susp:suspended, ie, packet in queue will not be scheduled
+  C   :CIR in kbps
+  P   :PIR in kbps
+  c   :cbs in bytes
+  p   :pbs in bytes
+
+                                        --------------------                     
+                                        |port[0/2]         |                     
+                                        | stat:Normal      |                     
+                  --------------------  |                  |                     
+                  |sched[/18]        |  |                  |                     
+                  | stat:Normal      |  |                  |                     
+q[   5/  20]------|child[0]:WSP:0    |  |                  |                     
+  stat:Normal     | C/P:NoLim/    0  |  |                  |                     
+                  | c/p:16384/20480  |  |                  |                     
+q[   6/  21]------|child[1]:WSP:1    |  |                  |                     
+  stat:Normal     | C/P: 8000/10000  |  |                  |                     
+                  | c/p: 8192/16384  |  |                  |                     
+q[   7/  22]------|child[2]:WSP:2    |  |                  |                     
+  stat:Normal     | C/P: 8000/10000  |  |                  |                     
+                  | c/p: 8192/16384  |  |                  |                     
+q[   8/  23]------|child[3]:WSP:3    |  |                  |                     
+  stat:Normal     | C/P: 8000/10000  |  |                  |--CPU:0              
+                  | c/p: 8192/16384  |--|child[0] WSP:0    |  -                  
+q[   9/  24]------|child[4]:WSP:4    |  | C/P:NoLim/    0  |  C/P:NoLim/    0    
+  stat:Normal     | C/P: 8000/10000  |  | c/p:16384/    0  |  c/p:16384/    0    
+                  | c/p: 8192/16384  |  |                  |                     
+q[  10/  25]------|child[5]:WSP:5    |  |                  |                     
+  stat:Normal     | C/P: 8000/10000  |  |                  |                     
+                  | c/p: 8192/16384  |  |                  |                     
+q[  11/  26]------|child[6]:WSP:6    |  |                  |                     
+  stat:Normal     | C/P: 8000/10000  |  |                  |                     
+                  | c/p: 8192/16384  |  |                  |                     
+q[  12/  27]------|child[7]:WSP:7    |  |                  |                     
+  stat:Normal     | C/P: 8000/10000  |  |                  |                     
+                  | c/p: 8192/16384  |  |                  |                     
+                  --------------------  |                  |                     
+q[   1/   5]----------------------------|child[1]:WSP:7    |                     
+  stat:Normal                           | C/P:NoLim/    0  |                     
+                                        | c/p:16384/20480  |                     
+                                        --------------------                     
+                                                                                 
+                                        --------------------                     
+                                        |port[15/10]       |                     
+                                        | stat:Normal      |                     
+                  --------------------  |                  |                     
+                  |sched[/35]        |  |                  |                     
+                  | stat:Normal      |  |                  |                     
+q[  13/  37]------|child[0]:WSP:0    |  |                  |                     
+  stat:Normal     | C/P:NoLim/    0  |  |                  |                     
+                  | c/p:16384/20480  |  |                  |                     
+q[  14/  38]------|child[1]:WSP:1    |  |                  |                     
+  stat:Normal     | C/P:NoLim/    0  |  |                  |                     
+                  | c/p:16384/20480  |  |                  |                     
+q[  15/  39]------|child[2]:WSP:2    |  |                  |                     
+  stat:Normal     | C/P:NoLim/    0  |  |                  |                     
+                  | c/p:16384/20480  |  |                  |                     
+q[  16/  40]------|child[3]:WSP:3    |  |                  |                     
+  stat:Normal     | C/P:NoLim/    0  |  |                  |--ETH_LAN:4          
+                  | c/p:16384/20480  |--|child[0] WSP:0    |  CH1000008          
+q[  17/  41]------|child[4]:WSP:4    |  | C/P:NoLim/    0  |  C/P:NoLim/    0    
+  stat:Normal     | C/P:NoLim/    0  |  | c/p:16384/    0  |  c/p:16384/    0    
+                  | c/p:16384/20480  |  |                  |                     
+q[  18/  42]------|child[5]:WSP:5    |  |                  |                     
+  stat:Normal     | C/P:NoLim/    0  |  |                  |                     
+                  | c/p:16384/20480  |  |                  |                     
+q[  19/  43]------|child[6]:WSP:6    |  |                  |                     
+  stat:Normal     | C/P:NoLim/    0  |  |                  |                     
+                  | c/p:16384/20480  |  |                  |                     
+q[  20/  44]------|child[7]:WSP:7    |  |                  |                     
+  stat:Normal     | C/P:NoLim/    0  |  |                  |                     
+                  | c/p:16384/20480  |  |                  |                     
+                  --------------------  |                  |                     
+q[   3/  13]----------------------------|child[1]:WSP:7    |                     
+  stat:Normal                           | C/P:NoLim/    0  |                     
+                                        | c/p:16384/20480  |                     
+                                        --------------------                     
+                                                                                 
+                                        --------------------                     
+                                        |port[16/45]       |                     
+                                        | stat:Normal      |--DirectPath:5       
+q[  21/  48]----------------------------|child[0]:WSP:0    |  CH1000009          
+  stat:Normal                           | C/P:NoLim/    0  |  C/P:NoLim/    0    
+                                        | c/p:16384/20480  |  c/p:16384/    0    
+                                        --------------------                     
+                                                                                 
+                                        --------------------                     
+                                        |port[23/6]        |                     
+                                        | stat:Normal      |--Reinsert:          
+q[   2/   9]----------------------------|child[0]:WSP:0    |  CH1000010          
+  stat:Normal                           | C/P:NoLim/    0  |  C/P:NoLim/    0    
+                                        | c/p:16384/20480  |  c/p:16384/    0    
+                                        --------------------                     
+                                                                                 
+                                        --------------------                     
+                                        |port[26/14]       |                     
+                                        | stat:Normal      |--GPON:2             
+q[   4/  17]----------------------------|child[0]:WSP:0    |  CH2000000          
+  stat:Normal                           | C/P:NoLim/    0  |  C/P:NoLim/    0    
+                                        | c/p:16384/20480  |  c/p:16384/    0    
+                                        --------------------                     
+                                                                                 
+                                        --------------------                     
+                                        |port[27/50]       |                     
+                                        | stat:Normal      |                     
+                  --------------------  |                  |                     
+                  |sched[/49]        |  |                  |                     
+                  | stat:Normal      |  |                  |                     
+q[  22/  54]------|child[0]:WSP:0    |  |                  |                     
+  stat:Normal     | C/P:NoLim/    0  |  |                  |                     
+                  | c/p:16384/20480  |  |                  |                     
+q[  23/  55]------|child[1]:WSP:1    |  |                  |                     
+  stat:Normal     | C/P:NoLim/    0  |  |                  |                     
+                  | c/p:16384/20480  |  |                  |                     
+q[  24/  56]------|child[2]:WSP:2    |  |                  |                     
+  stat:Normal     | C/P:NoLim/    0  |  |                  |                     
+                  | c/p:16384/20480  |  |                  |                     
+q[  25/  57]------|child[3]:WSP:3    |  |                  |--GPON:2             
+  stat:Normal     | C/P:NoLim/    0  |  |                  |  CH2000000          
+                  | c/p:16384/20480  |--|child[0] WSP:0    |  C/P:NoLim/    0    
+q[  26/  58]------|child[4]:WSP:4    |  | C/P:NoLim/    0  |  c/p:16384/    0    
+  stat:Normal     | C/P:NoLim/    0  |  | c/p:16384/    0  |                     
+                  | c/p:16384/20480  |  |                  |                     
+q[  27/  59]------|child[5]:WSP:5    |  |                  |                     
+  stat:Normal     | C/P:NoLim/    0  |  |                  |                     
+                  | c/p:16384/20480  |  |                  |                     
+q[  28/  60]------|child[6]:WSP:6    |  |                  |                     
+  stat:Normal     | C/P:NoLim/    0  |  |                  |                     
+                  | c/p:16384/20480  |  |                  |                     
+q[  29/  61]------|child[7]:WSP:7    |  |                  |                     
+  stat:Normal     | C/P:NoLim/    0  |  |                  |                     
+                  | c/p:16384/20480  |  |                  |                     
+                  --------------------  |                  |                     
+                                        --------------------                     
+                                                                                 

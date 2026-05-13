@@ -1,0 +1,21 @@
+Page: PLOAM Downstream Counters
+OPTION                                              VALUE
+Burst profile                                      : 346764 messages
+Assign ONU ID                                      : 1 messages
+Ranging time                                       : 1 messages
+Deactivate ONU ID                                  : 0 messages
+Disable serial number                              : 0 messages
+Request Registration                               : 0 messages
+Assign allocation ID                               : 1 messages
+Key control                                        : 34 messages
+Sleep allow                                        : 0 messages
+Calibration request                                : 0 messages
+Adjust TX wavelength                               : 0 messages
+Tuning control with "request"                      : 0 messages
+Tuning control with "complete"                     : 0 messages
+System Profile                                     : 0 messages
+Channel profile                                    : 0 messages
+Protection profile                                 : 0 messages
+Change power level                                 : 0 messages
+Power consumption inquire                          : 0 messages
+Unknown message                                    : 0 messages

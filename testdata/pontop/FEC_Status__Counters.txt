@@ -1,0 +1,11 @@
+Page: FEC Status & Counters
+OPTION                                              VALUE
+FEC upstream                                       : ON
+FEC downstream                                     : ON
+ 
+BIP errors                                         : 0
+Total FEC codewords                                : 289895929785
+Corrected FEC codewords                            : 0
+Uncorrected FEC codewords                          : 0
+Corrected FEC bytes                                : 0
+FEC errored seconds                                : 0

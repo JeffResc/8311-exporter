@@ -1,0 +1,90 @@
+Page: Debug Burst Profile
+Burst Profile Index (Upstream Rate)
+Index 0 (Low)
+---------------------
+Version                                            : 0
+Upstream FEC                                       : DIS
+Delimiter Length                                   : 0
+Delimiter Pattern                                  : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+Preamble Length                                    : 0
+Preamble Repeat Count                              : 0
+Preamble Pattern                                   : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+PON Tag                                            : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+ 
+Index 0 (High)
+---------------------
+Version                                            : 0
+Upstream FEC                                       : DIS
+Delimiter Length                                   : 8
+Delimiter Pattern                                  : 0xCE 0x99 0xCE 0x5E 0x50 0x28 0xB4 0x1F
+Preamble Length                                    : 8
+Preamble Repeat Count                              : 127
+Preamble Pattern                                   : 0xAA 0xAA 0xAA 0xAA 0xAA 0xAA 0xAA 0xAA
+PON Tag                                            : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+ 
+Index 1 (Low)
+---------------------
+Version                                            : 0
+Upstream FEC                                       : DIS
+Delimiter Length                                   : 0
+Delimiter Pattern                                  : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+Preamble Length                                    : 0
+Preamble Repeat Count                              : 0
+Preamble Pattern                                   : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+PON Tag                                            : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+ 
+Index 1 (High)
+---------------------
+Version                                            : 0
+Upstream FEC                                       : DIS
+Delimiter Length                                   : 8
+Delimiter Pattern                                  : 0xCE 0x99 0xCE 0x5E 0x50 0x28 0xB4 0x1F
+Preamble Length                                    : 8
+Preamble Repeat Count                              : 116
+Preamble Pattern                                   : 0xAA 0xAA 0xAA 0xAA 0xAA 0xAA 0xAA 0xAA
+PON Tag                                            : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+ 
+Index 2 (Low)
+---------------------
+Version                                            : 0
+Upstream FEC                                       : DIS
+Delimiter Length                                   : 0
+Delimiter Pattern                                  : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+Preamble Length                                    : 0
+Preamble Repeat Count                              : 0
+Preamble Pattern                                   : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+PON Tag                                            : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+ 
+Index 2 (High)
+---------------------
+Version                                            : 0
+Upstream FEC                                       : DIS
+Delimiter Length                                   : 0
+Delimiter Pattern                                  : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+Preamble Length                                    : 0
+Preamble Repeat Count                              : 0
+Preamble Pattern                                   : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+PON Tag                                            : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+ 
+Index 3 (Low)
+---------------------
+Version                                            : 0
+Upstream FEC                                       : DIS
+Delimiter Length                                   : 0
+Delimiter Pattern                                  : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+Preamble Length                                    : 0
+Preamble Repeat Count                              : 0
+Preamble Pattern                                   : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+PON Tag                                            : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+ 
+Index 3 (High)
+---------------------
+Version                                            : 0
+Upstream FEC                                       : EN
+Delimiter Length                                   : 8
+Delimiter Pattern                                  : 0xCE 0x99 0xCE 0x5E 0x50 0x28 0xB4 0x1F
+Preamble Length                                    : 8
+Preamble Repeat Count                              : 116
+Preamble Pattern                                   : 0xAA 0xAA 0xAA 0xAA 0xAA 0xAA 0xAA 0xAA
+PON Tag                                            : 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+ 

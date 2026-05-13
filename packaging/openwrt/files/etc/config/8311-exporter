@@ -1,0 +1,12 @@
+config 8311-exporter 'main'
+	option enabled '1'
+	# Where to listen. Default 'mgmt' binds to the LCT management
+	# interface IP (network.lct.ipaddr, 192.168.98.1 on stock firmware) so
+	# the metrics endpoint isn't exposed on the PON-side bridges that face
+	# the public internet. Override with an explicit address:port, e.g.
+	#   '127.0.0.1:9833' — loopback only (scrape via SSH tunnel)
+	#   '0.0.0.0:9833'  — every interface (NOT recommended)
+	option listen 'mgmt'
+	# Collect per-interface ethtool counters. Adds ~500 ms per scrape on
+	# this 400 MHz SoC; set to '0' if your scrape budget is tight.
+	option ethtool '1'

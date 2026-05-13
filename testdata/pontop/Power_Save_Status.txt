@@ -1,0 +1,9 @@
+Page: Power Save Status
+OPTION                                              VALUE
+Power Save State                                   : Watch
+ 
+Total time                                         : 0 us
+ 
+Doze time                                          : 0 us
+Cyclic sleep time                                  : 0 us
+Watchful sleep time                                : 0 us
