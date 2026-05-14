@@ -61,6 +61,11 @@ jobs:
       - name: Build IPK via OpenWrt SDK
         run: |
           mkdir -p dist
+          # The SDK image's buildbot UID (1000) writes the .ipk back through
+          # the /dist bind mount; on Linux runners the host dir is owned by a
+          # different UID and the write fails. Making it world-writable is
+          # the smallest portable fix.
+          chmod a+rwx dist
           docker run --rm --platform linux/amd64 \
             -v "${{ github.workspace }}/packaging/openwrt:/pkg:ro" \
             -v "${{ github.workspace }}/${BIN}:/prebuilt/8311-exporter:ro" \

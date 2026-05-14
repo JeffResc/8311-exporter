@@ -48,6 +48,12 @@ tasks:
     deps: [build:mips]
     cmds:
       - mkdir -p dist
+      # The SDK image runs as user 'buildbot' (UID 1000); on Linux runners
+      # (e.g. GitHub Actions) the host's dist/ is owned by a different UID,
+      # so the container can't write the .ipk back through the bind mount.
+      # Making dist/ world-writable is the smallest portable fix — a no-op
+      # on macOS Docker (which already ignores UID mismatches).
+      - chmod a+rwx dist
       # SDK image runs as user 'buildbot' with the SDK root at /builder.
       # We mount our packaging dir and the pre-built binary read-only, then
       # build via the standard SDK package flow. The resulting .ipk is
