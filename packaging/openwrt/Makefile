@@ -12,7 +12,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=8311-exporter
 PKG_VERSION?=0.0.0
 PKG_RELEASE:=1
-PKG_LICENSE:=MIT
+PKG_LICENSE:=GPL-3.0-or-later
 PKG_MAINTAINER:=Jeff <jeff@example.com>
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
