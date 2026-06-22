@@ -40,7 +40,7 @@ jobs:
       ARCH: mips_24kc_nomips16
       SDK_IMAGE: openwrt/sdk:mips_24kc-23.05.5
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-go@v6
         with:
